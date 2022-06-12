@@ -1,6 +1,6 @@
 - 👋 Hi, I’m Nehang Patel
 - 👀 I’m interested in Cybersecurity and Data Science
-- 🌱 I’m currently learning Computer Science at University of Cincinnati
+- 🌱 I’m currently majoring in Computer Science at the University of Cincinnati
 - 💞️ I’m looking to collaborate on practically anything!
 - 📫 How to reach me: Email-npcool5@gmail.com
 
