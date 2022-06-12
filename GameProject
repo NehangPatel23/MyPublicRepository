@@ -1,13 +1,10 @@
 #INTRODUCTION
 import time
     
-print('               Hello!! ')
+print('\t\t\t\t Hello!! ')
 time.sleep(1)
 
 print('       Welcome To Game Arcade!!       ')               
-print()
-time.sleep(1.5)
-print('We create the best-in-class games for our esteemed users. Happy to have you join us!!')
 print()
 time.sleep(1.5)
 print('Umm, mind sharing some essential information?')
