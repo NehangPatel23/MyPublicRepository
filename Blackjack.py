@@ -79,7 +79,7 @@ def Blackjack():
                     dealer_blackjack = blackjack(dealer)
                     player_win = 0
                     dealer_win = 0
-                    # when player (dealer) bust.
+                    # when player (dealer) busts.
                     if player_bust:
                         if not dealer_blackjack and total_dealer < 21:
                             dealer_win += 1
@@ -117,10 +117,10 @@ def Blackjack():
                     print("Player has: {0} total = {1}".format(player_hand, sum(player_hand)))    
                     print("Dealer has: {0} total = {1}".format(dealer_hand, sum(dealer_hand)))
                     print("player: {} | dealer: {}".format(player_win, dealer_win))
-                    if player_win==1:
-                        return ts+10
-                    elif dealer_win==1:
-                        return ts-5
+                    if player_win == 1:
+                        return ts + 10
+                    elif dealer_win == 1:
+                        return ts - 5
                     
         def main():
                     printIntro()
@@ -131,7 +131,7 @@ def Blackjack():
                     return d
                 
         if __name__ == "__main__": 
-                    c=main()
+                    c = main()
                     return c
 
 
@@ -140,4 +140,6 @@ cont = "y"
 while cont.lower() == "y":
     Blackjack()
     cont = str(input("Do you wish to continue playing? (y/n): "))
+
+        
 Blackjack()
