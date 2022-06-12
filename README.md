@@ -1,4 +1,4 @@
-- 👋 Hi, I’m @NehangPatel23
+- 👋 Hi, I’m Nehang Patel
 - 👀 I’m interested in Cybersecurity and Data Science
 - 🌱 I’m currently learning Computer Science at University of Cincinnati
 - 💞️ I’m looking to collaborate on practically anything!
