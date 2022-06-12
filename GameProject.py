@@ -12,80 +12,80 @@ print('P.S. Just for leaderboard and all that stuff...:-')
 print()
 
 time.sleep(1.5)
-z=input('Please tell us, Are you a part of our community(i.e. Do you have an account here)?? (If yes: Y or If no: N): ')
+z = input('Please tell us, Are you a part of our community(i.e. Do you have an account here)?? (If yes: Y or If no: N): ')
 
 #CONNECTION TO MYSQL
 import mysql.connector as mc
-c=mc.connect(host='localhost',user='root',password='',database='gamesinfo')
+c = mc.connect(host='localhost',user='root',password='',database='gamesinfo')
 if c.is_connected():
     print()
     
-ct=c.cursor()
+ct = c.cursor()
 ct.execute('select * from user')
-st=ct.fetchall()
-count=ct.rowcount
+st = ct.fetchall()
+count = ct.rowcount
 c.close()
-f='n'
+f = 'n'
 
-if(z=='y'):
-    t=input('Username: ')
-    user_name=t
+if (z == 'y'):
+    t = input('Username: ')
+    user_name = t
 else:
     print('Please create your account.')
-    i=input('Username: ')
-    o=input('Password: ')
-    e=mc.connect(host='localhost',user='root',password='',database='gamesinfo')
+    i = input('Username: ')
+    o = input('Password: ')
+    e = mc.connect(host = 'localhost', user = 'root', password = '',database = 'gamesinfo')
     if e.is_connected():
         print()
         print('Hey',i,', WELCOME!!!')
-    r=e.cursor()
+    r = e.cursor()
     r.execute("insert into user values(%s,%s,%s,%s)",(count+1,i,o,0))
     e.commit()
     e.close()
-    f='m'
-    user_name=i
-    pass_word=o
+    f = 'm'
+    user_name = i
+    pass_word = o
     
-k=mc.connect(host='localhost',user='root',password='',database='gamesinfo')
+k = mc.connect(host = 'localhost', user = 'root', password = '', database = 'gamesinfo')
 if k.is_connected():
     print()
     
-q=k.cursor()
+q = k.cursor()
 q.execute('select username from user')
-m=q.fetchall()
+m = q.fetchall()
 k.close()
 
 
-n=mc.connect(host='localhost',user='root',password='',database='gamesinfo')
+n = mc.connect(host = 'localhost', user = 'root', password = '', database = 'gamesinfo')
 if n.is_connected():
     print('Successfully connected to the server!!')
 
-w=n.cursor()
+w = n.cursor()
 w.execute('select passwd from user')
-u=w.fetchall()
+u = w.fetchall()
 n.close()
 
 
 
-if(z=='y'):
+if(z == 'y'):
     for l in m:
         if t in l:
         
-            pas=input('Password:')
+            pas = input('Password:')
             for lw in u:
                 if pas in lw:
                     time.sleep(1.5)
                     print('Logged in')
-                    f='m'
+                    f = 'm'
                     break
             else:
-                while(f=='n'):
+                while(f == 'n'):
                     pas=input('Please enter your password again: ')
                     for lw in u:
                         if pas in lw:
                             print('Logged in')
                             f='m'
-    pass_word=pas
+    pass_word = pas
 
 #================================================GAMES========================================================================
 #HANGMAN
@@ -151,8 +151,8 @@ def Hangman():
     =========''']
     words = 'ant bat bull bear camel cat cobra cow crow deer dog fox goat lion lizard monkey mouse panda parrot python rabbit rat shark sheep snake spider tiger turtle whale wolf zebra'.split()
 
-    win_pts=0
-    lose_pts=0
+    win_pts = 0
+    lose_pts = 0
 
     def getRandomWord(wordList):
         # This function returns a random string from the passed list of strings.
@@ -163,9 +163,9 @@ def Hangman():
         print(HANGMANPICS[len(missedLetters)])
         print()
 
-        print('Missed letters:', end=' ')
+        print('Missed letters:', end = ' ')
         for letter in missedLetters:
-            print(letter, end=' ')
+            print(letter, end = ' ')
         print()
 
         blanks = '_' * len(secretWord)
@@ -175,7 +175,7 @@ def Hangman():
                 blanks = blanks[:i] + secretWord[i] + blanks[i+1:]
 
         for letter in blanks: # show the secret word with spaces in between each letter
-            print(letter, end=' ')
+            print(letter, end = ' ')
         print()
 
     def getGuess(alreadyGuessed):
@@ -246,8 +246,8 @@ def Hangman():
             else:
                 break
 
-    z=input("Do you want to know your win and loss points? (y/n)")
-    if z=="y":
+    z = input("Do you want to know your win and loss points? (y/n)")
+    if z == "y":
         print("Win points:",win_pts)
         print("Loss points:",lose_pts)
         print("Total points:",win_pts+lose_pts)
@@ -267,8 +267,8 @@ def Guess_Game():
 
     guessesTaken = 0
 
-    win_pts=0
-    lose_pts=0
+    win_pts = 0
+    lose_pts = 0
 
     number = random.randint(0, 20)
     print('Well, I am thinking of a number between 0 and 20.')
@@ -301,8 +301,8 @@ def Guess_Game():
         print("You have lost the game. You have been awarded -5 points!")
         lose_pts-=5
 
-    z=input("Do you want to know your win and loss points? (y/n)")
-    if z=="y":
+    z = input("Do you want to know your win and loss points? (y/n)")
+    if z == "y":
         print("Win points:",win_pts)
         print("Loss points:",lose_pts)
         print("Total points:",win_pts+lose_pts)
@@ -317,7 +317,7 @@ def Blackjack():
 
         from random import randrange
         
-        ts=0
+        ts = 0
         
         def printIntro():
                     print("Blackjack (twenty-one) is a casino game played with cards.")
@@ -455,32 +455,34 @@ def Blackjack():
 print()
 print()
 
-cont="y"
+cont = "y"
 
-yui=sc_g=sc_b=0
+yui = sc_g = sc_b=0
 
-while cont=="y":
+while cont == "y":
     print("You can play the following from the Game Arcade Premium Collection:")
     print("1.Hangman\n2.Guess The Number\n3.Blackjack Casino Game")
 
-    choice=int(input("Which game would you like to play from the ones mentioned above? "))
+    choice = int(input("Which game would you like to play from the ones mentioned above? "))
     
-    if choice==1:
-        yui=Hangman()
-    elif choice==2:
-        sc_g=Guess_Game()
-    elif choice==3:
-       sc_b=Blackjack()
+    if choice == 1:
+        yui = Hangman()
+    elif choice == 2:
+        sc_g = Guess_Game()
+    elif choice == 3:
+       sc_b = Blackjack()
     else:
         print("Invalid Choice. Please select a valid response.")
         continue
-    cont=input("Do you wish to continue playing the games? (y/n)")
+        
+    cont = input("Do you wish to continue playing the games? (y/n)")
     
-    print("Hangman Score:",yui," Guess Game Score:",sc_g," Blackjack Score:",sc_b)
+    print("Hangman Score:", yui, " Guess Game Score:", sc_g, " Blackjack Score:", sc_b)
     
-    sph=yui+sc_g+sc_b
-    print("Total score=",sph)        
-    if cont=="n":
+    sph = yui + sc_g + sc_b
+    print("Total score=", sph)
+    
+    if cont == "n":
         print("Thank you for playing ! We hope that you enjoyed playing our games!!") 
         time.sleep(0.75)
         print("See you soon!!")
@@ -489,33 +491,34 @@ while cont=="y":
         time.sleep(1.25)
         exit
  
-kqqb=mc.connect(host='localhost',user='root',password='',database='gamesinfo')
+kqqb = mc.connect(host = 'localhost', user = 'root', password = '', database = 'gamesinfo')
 if kqqb.is_connected():
     print()
         
-    qqcb=kqqb.cursor()    
-    if(z=='y'):
-        amk=t
+    qqcb = kqqb.cursor()    
+    if(z == 'y'):
+        amk = t
     else:
-        amk=i            
+        amk = i            
     qqcb.execute('update user set total=total+%s where username=%s',(sph,amk))
     kqqb.commit()
     kqqb.close()
-kqqc=mc.connect(host='localhost',user='root',password='',database='gamesinfo')
+kqqc = mc.connect(host = 'localhost', user = 'root', password = '', database = 'gamesinfo')
 if kqqc.is_connected():
     print()
     
-    qqcc=kqqc.cursor()    
+    qqcc = kqqc.cursor()    
     qqcc.execute('select username,total from user order by total desc')
-    zxy=qqcc.fetchall()
+    zxy = qqcc.fetchall()
     kqqb.close()
        
     print("-----------------LEADERBOARD------------------")
     print(" Username           |             Total Score ")
     for i in zxy:
         for j in i:
-            print(j," "*(35-len(str(j))),end=" ")
+            print(j, " "*(35-len(str(j))), end = " ")
         print()
            
     print()
      
+# End of code
