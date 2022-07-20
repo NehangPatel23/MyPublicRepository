@@ -2,7 +2,7 @@
 - 👀 I’m interested in Cybersecurity and Data Science
 - 🌱 I’m currently majoring in Computer Science at the University of Cincinnati
 - 💞️ I’m looking to collaborate on practically anything!
-- 📫 How to reach me: Email-npcool5@gmail.com
+- 📫 How to reach me: Email - patel3ng@mail.uc.edu / nehangpatel2306@gmail.com
 
 <!---
 NehangPatel23/NehangPatel23 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
