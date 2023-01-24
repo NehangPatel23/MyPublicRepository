@@ -4,6 +4,7 @@
 - 💞️ I’m looking to collaborate on practically anything!
 - 📫 How to reach me: Email - patel3ng@mail.uc.edu / nehangpatel2306@gmail.com
 
+This is my public repository that has my codes.
 <!---
 NehangPatel23/NehangPatel23 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.
